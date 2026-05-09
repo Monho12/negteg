@@ -1,0 +1,13 @@
+.main-container {
+  border: 1px solid black;
+}
+
+.arts-grid {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.gallery {
+  border: 1px solid red;
+}

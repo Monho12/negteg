@@ -1,0 +1,57 @@
+.main-header {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 20px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.auth-links {
+  display: flex;
+  gap: 20px;
+}
+
+.auth-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: black;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-links a::after {
+  transform: scaleX(0);
+  transform-origin: center;
+}

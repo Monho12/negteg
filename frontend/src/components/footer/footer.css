@@ -1,0 +1,41 @@
+.footer {
+  border: 1px solid black;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-right {
+  display: flex;
+  gap: 16px;
+  text-decoration: none;
+  position: relative;
+}
+
+.footer-right a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: black;
+  transition: width 0.3s ease;
+}
+
+.footer-right a:hover::after {
+  width: 23%;
+  left: 0%;
+  right: auto;
+}

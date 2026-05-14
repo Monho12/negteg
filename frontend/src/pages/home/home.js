@@ -1,6 +1,9 @@
-import './home.css'
-import MiniArtCard from '../../components/miniArtCard/miniArtCard';
+import './home.css';
 import { useEffect, useState } from 'react';
+import NewArrivals from '../../components/newArrivals/newArrivals';
+import ExhibitionSection from '../../components/exhibitionSection/exhibitionSection';
+import ArtistsSection from '../../components/artistsSection/artistsSection';
+import LandingSection from '../../components/landingSection/landingSection';
 
 export default function Home() {
     const [arts, setArts] = useState([]);
@@ -11,22 +14,28 @@ export default function Home() {
             .then(data => setArts(data))
             .catch(err => console.log(err));
     }, []);
+
+    const newArts = arts.slice(-3).reverse();
+    const featuredArt = arts[0];
+
+    const artists = arts.reduce((acc, art) => {
+        if (!acc.find(a => a.name === art.artist)) {
+            acc.push({
+                name: art.artist,
+                works: arts.filter(a => a.artist === art.artist),
+                image: art.image,
+                artistImage: art.artistImage
+            });
+        }
+        return acc;
+    }, []);
+
     return (
-        <main className="main-container">
-            <h1>The Collection</h1>
-            <p>
-                Explore our collection of artworks, connect with artists, and share your
-                own creations.
-            </p>
-
-            <section className="arts-grid">
-                {arts.map((art) => (
-                    <MiniArtCard key={art.id} {...art} />
-                ))}
-            </section>
-
-
-
+        <main className="home">
+            <LandingSection art={featuredArt} />
+            <NewArrivals arts={newArts} />
+            <ExhibitionSection art={arts[2]} />
+            <ArtistsSection artists={artists} arts={arts.image} />
         </main>
-    )
+    );
 }

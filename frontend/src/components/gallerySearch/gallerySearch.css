@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+.gallery-search {
+    position: relative;
+}
+
+.gallery-search-input {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: #1a1a1a;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #c8c8c8;
+    padding: 6px 0;
+    width: 220px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.gallery-search-input::placeholder {
+    color: #aaa;
+    letter-spacing: 0.08em;
+}
+
+.gallery-search-input:focus {
+    border-bottom-color: #1a1a1a;
+}

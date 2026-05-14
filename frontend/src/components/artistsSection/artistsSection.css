@@ -1,0 +1,52 @@
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 40px 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.artist-card {
+  cursor: default;
+}
+
+.artist-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.artist-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.03) saturate(0.7) brightness(0.95);
+  transition: filter 0.4s ease, transform 0.5s ease;
+  display: block;
+}
+
+.artist-card:hover .artist-img {
+  filter: contrast(1.05) saturate(0.55) brightness(0.88);
+  transform: scale(1.03);
+}
+
+.artist-works-count {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b8966e;
+  margin: 0 0 6px 0;
+}
+
+.artist-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+}

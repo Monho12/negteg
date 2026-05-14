@@ -1,0 +1,12 @@
+.arrivals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px 36px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.arrivals-grid li {
+  display: contents;
+}

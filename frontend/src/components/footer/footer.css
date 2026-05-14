@@ -1,9 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500&display=swap");
+
 .footer {
-  border: 1px solid black;
+  border-top: 1px solid #999;
   padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 300;
+  line-height: 1.85;
 }
 
 .footer-left {
@@ -19,6 +24,7 @@
 }
 
 .footer-right a {
+  position: relative;
   text-decoration: none;
   color: black;
 }
@@ -27,15 +33,20 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
+  bottom: 1px;
+  width: 100%;
+  height: 1px;
   background: black;
-  transition: width 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .footer-right a:hover::after {
-  width: 23%;
-  left: 0%;
-  right: auto;
+  transform: scaleX(1);
+}
+
+.footer-right a::after {
+  transform: scaleX(0);
+  transform-origin: center;
 }

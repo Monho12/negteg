@@ -4,17 +4,19 @@ import { Link } from "react-router-dom"
 export default function Header() {
     return (
         <header className="main-header">
-            <p className="logo">Artgal</p>
+            <Link to="/" className="logo">Artgal</Link>
 
-            <ul className="nav-links">
-                <Link to="/">Home</Link>
-                <Link to="/gallery">Gallery</Link>
-            </ul>
+            <nav>
+                <ul className="nav-links">
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/gallery">Gallery</Link></li>
+                </ul>
+            </nav>
 
-            <div className="auth-links">
+            <nav className="auth-links">
                 <Link to="/login">Login</Link>
                 <Link to="/signup">Sign up</Link>
-            </div>
+            </nav>
         </header>
     )
 }

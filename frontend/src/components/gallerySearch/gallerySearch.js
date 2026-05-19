@@ -10,6 +10,9 @@ export default function GallerySearch({ value, onChange }) {
                 value={value}
                 onChange={e => onChange(e.target.value)}
             />
+            {value && (
+                <button className="gallery-search-clear" onClick={() => onChange('')}>✕</button>
+            )}
         </div>
     );
 }

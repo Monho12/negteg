@@ -16,7 +16,6 @@ export default function Home() {
     }, []);
 
     const newArts = arts.slice(-3).reverse();
-    const featuredArt = arts[0];
 
     const artists = arts.reduce((acc, art) => {
         if (!acc.find(a => a.name === art.artist)) {
@@ -32,7 +31,7 @@ export default function Home() {
 
     return (
         <main className="home">
-            <LandingSection art={featuredArt} />
+            <LandingSection arts={arts} />
             <NewArrivals arts={newArts} />
             <ExhibitionSection art={arts[2]} />
             <ArtistsSection artists={artists} arts={arts.image} />

@@ -3,6 +3,8 @@ import Header from "./components/header/header";
 import Home from "./pages/home/home";
 import Gallery from "./pages/gallery/gallery";
 import ArtDetail from "./pages/artDetail/artDetail";
+import Login from "./pages/login/login";
+import Signup from "./pages/signup/signup";
 import { Footer } from "./components/footer/footer";
 
 function App() {
@@ -13,9 +15,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/art/:id" element={<ArtDetail />} />
-        {/* <Route path="/addArt" element={<AddArt />} /> */}
-        {/* <Route path="/login" element={<Login />} /> */}
-        {/* <Route path="/signup" element={<Signup />} /> */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
       <Footer />
     </BrowserRouter>
